@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>85EE1389-0F89-429E-98FD-2A92705D1E4A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>WorkPlaning</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>a27b76cf-624d-f149-a35b-6a4634df3290++6705</key>
+		<string>http://techsrv.wind.com.cn:8080/svn/WL/Resources/Objective_C/Demo2015</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>WorkPlaning/WorkPlaning.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>a27b76cf-624d-f149-a35b-6a4634df3290++6705</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>a27b76cf-624d-f149-a35b-6a4634df3290++6705</key>
+		<string>http://techsrv.wind.com.cn:8080/svn/WL</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>http://techsrv.wind.com.cn:8080/svn/WL/Resources/Objective_C/Demo2015/WorkPlaning/WorkPlaning.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>a27b76cf-624d-f149-a35b-6a4634df3290++6705</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>a27b76cf-624d-f149-a35b-6a4634df3290++6705</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Demo2015</string>
+		</dict>
+	</array>
+</dict>
+</plist>
