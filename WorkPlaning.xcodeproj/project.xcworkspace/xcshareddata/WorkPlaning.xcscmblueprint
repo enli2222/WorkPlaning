@@ -1,32 +1,30 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "a27b76cf-624d-f149-a35b-6a4634df3290++5103",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "a27b76cf-624d-f149-a35b-6a4634df3290++7912",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
-    "a27b76cf-624d-f149-a35b-6a4634df3290++5103" : {
+    "a27b76cf-624d-f149-a35b-6a4634df3290++7912" : {
 
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "A1591B89191DB4E80F397B2CFB8C3FF9D708B9A3" : 0,
-    "a27b76cf-624d-f149-a35b-6a4634df3290++5103" : 0
+    "a27b76cf-624d-f149-a35b-6a4634df3290++7912" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "85EE1389-0F89-429E-98FD-2A92705D1E4A",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "A1591B89191DB4E80F397B2CFB8C3FF9D708B9A3" : "Demo2015\/WorkPlaning\/WorkPlaning\/",
-    "a27b76cf-624d-f149-a35b-6a4634df3290++5103" : "Demo2015"
+    "a27b76cf-624d-f149-a35b-6a4634df3290++7912" : "WorkPlaning\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "WorkPlaning",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
-  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "WorkPlaning\/WorkPlaning.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "WorkPlaning.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/enli2222\/WorkPlaning.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A1591B89191DB4E80F397B2CFB8C3FF9D708B9A3"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "a27b76cf-624d-f149-a35b-6a4634df3290++7912"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/techsrv.wind.com.cn:8080\/svn\/WL",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "a27b76cf-624d-f149-a35b-6a4634df3290++5103"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "a27b76cf-624d-f149-a35b-6a4634df3290++7912"
     }
   ]
 }
