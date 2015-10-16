@@ -31,6 +31,10 @@ class WorkListManager {
         historyWorkList = []
     }
     
+    func initDb(){
+        
+    }
+    
     class var sharedInstance: WorkListManager{
         struct Static {
             static let instance = WorkListManager()
@@ -105,7 +109,7 @@ class WorkListManager {
     }
     
     func loadData() {
-        
+        self.initDb()        
     }
   
     func uploadCurrentWorkList() -> (result: Bool,resultMsg: String) {
