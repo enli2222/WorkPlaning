@@ -12,8 +12,11 @@ class EditViewController: UIViewController,UITextViewDelegate {
     @IBOutlet weak var workTitle: UITextField!
     @IBOutlet weak var workDetail: UITextView!
     @IBAction func onSaveButtonClick(sender: AnyObject) {
+        guard let tmp = workTitle.text else {
+            return
+        }
         
-        if WorkListManager.sharedInstance.currentWorkID.isEmpty {
+        if WorkListManager.sharedInstance.currentWorkID == 0 {
             WorkListManager.sharedInstance.addWork(workTitle.text!, workContent: workDetail.text)
 
         } else {
@@ -38,7 +41,7 @@ class EditViewController: UIViewController,UITextViewDelegate {
     }
     
     override func viewDidAppear(animated: Bool) {
-        if WorkListManager.sharedInstance.currentWorkID.isEmpty {
+        if WorkListManager.sharedInstance.currentWorkID == 0 {
             self.workDetail.text = ""
             self.workTitle.text = ""
         }else{

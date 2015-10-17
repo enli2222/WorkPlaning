@@ -29,7 +29,7 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     
     @IBAction func onAddButtonClick(sender: AnyObject) {
-        WorkListManager.sharedInstance.currentWorkID = ""
+        WorkListManager.sharedInstance.currentWorkID = 0
         self.navigationController?.pushViewController(editViewController!, animated: true)
     }
     
@@ -46,18 +46,19 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         
         var editButton = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "编辑", handler: {(sender,indexPath)->Void in
-                WorkListManager.sharedInstance.currentWorkID = WorkListManager.sharedInstance.currentWorkList[indexPath.row].id
+                WorkListManager.sharedInstance.currentWorkID =
+                    WorkListManager.sharedInstance.currentWorkList[indexPath.row]["work_id"]!.asInt()
                 self.navi!.pushViewController(self.editViewController!, animated: true)
             })
         editButton.backgroundColor = UIColor.grayColor()
         func onCompletedButtonClick(sender:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void{
-            WorkListManager.sharedInstance.completedWork(WorkListManager.sharedInstance.currentWorkList[indexPath.row].id)
+            WorkListManager.sharedInstance.completedWork(WorkListManager.sharedInstance.currentWorkList[indexPath.row]["work_id"]!.asInt())
             workList.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Right)
         }
         var completedButton = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "完成",handler:onCompletedButtonClick)
         
         func onDeleteButtonClick(sender:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void{
-            WorkListManager.sharedInstance.delete( WorkListManager.sharedInstance.currentWorkList[indexPath.row].id)
+        WorkListManager.sharedInstance.delete(WorkListManager.sharedInstance.currentWorkList[indexPath.row]["work_id"]!.asInt())
             workList.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
 
         }
@@ -93,9 +94,8 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         if cell == nil {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: tmpIdentifier)
         }
-        print(indexPath.row)
         if indexPath.row < WorkListManager.sharedInstance.currentWorkList.count {
-           cell!.textLabel?.text = WorkListManager.sharedInstance.currentWorkList[indexPath.row].title
+           cell!.textLabel?.text = WorkListManager.sharedInstance.currentWorkList[indexPath.row]["work_title"]?.asString()
         }
         return cell!
     }

@@ -15,8 +15,10 @@ import AppKit
 
 let SQLITE_DATE = SQLITE_NULL + 1
 
-//private let SQLITE_STATIC = sqlite3_destructor_type(COpaquePointer(bitPattern:0))
-//private let SQLITE_TRANSIENT = sqlite3_destructor_type(COpaquePointer(bitPattern:-1))
+//private let SQLITE_STATIC = (sqlite3_destructor_type)(COpaquePointer(bitPattern:0))
+//private let SQLITE_TRANSIENT = (sqlite3_destructor_type)(COpaquePointer(bitPattern:-1))
+private let SQLITE_STATIC = unsafeBitCast(0, sqlite3_destructor_type.self)
+private let SQLITE_TRANSIENT = unsafeBitCast(-1, sqlite3_destructor_type.self)
 
 // MARK:- SQLColumn Class - Column Definition
 class SQLColumn {
@@ -247,7 +249,7 @@ class SQLiteDB {
 			}
 		}
 		let path = docDir.URLByAppendingPathComponent(dbName)
-		//print("Database path: \(path)")
+		print("Database path: \(path)")
 		// Check if copy of DB is there in Documents directory
 //		if !(fm.fileExistsAtPath(path.path!)) {
 //			// The database does not exist, so copy to Documents directory
@@ -377,12 +379,12 @@ class SQLiteDB {
 				// Check for data types
                 // todo SQLITE_TRANSIENT -- > nil 
 				if let txt = params![ndx-1] as? String {
-					flag = sqlite3_bind_text(stmt, CInt(ndx), txt, -1, nil)
+					flag = sqlite3_bind_text(stmt, CInt(ndx), txt, -1, SQLITE_TRANSIENT)
 				} else if let data = params![ndx-1] as? NSData {
-					flag = sqlite3_bind_blob(stmt, CInt(ndx), data.bytes, CInt(data.length), nil)
+					flag = sqlite3_bind_blob(stmt, CInt(ndx), data.bytes, CInt(data.length), SQLITE_TRANSIENT)
 				} else if let date = params![ndx-1] as? NSDate {
 					let txt = fmt.stringFromDate(date)
-					flag = sqlite3_bind_text(stmt, CInt(ndx), txt, -1, nil)
+					flag = sqlite3_bind_text(stmt, CInt(ndx), txt, -1, SQLITE_TRANSIENT)
 				} else if let val = params![ndx-1] as? Double {
 					flag = sqlite3_bind_double(stmt, CInt(ndx), CDouble(val))
 				} else if let val = params![ndx-1] as? Int {
