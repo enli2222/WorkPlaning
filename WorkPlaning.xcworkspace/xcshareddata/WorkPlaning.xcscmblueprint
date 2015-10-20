@@ -1,0 +1,32 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A1591B89191DB4E80F397B2CFB8C3FF9D708B9A3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "a27b76cf-624d-f149-a35b-6a4634df3290++7912" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A1591B89191DB4E80F397B2CFB8C3FF9D708B9A3" : 0,
+    "a27b76cf-624d-f149-a35b-6a4634df3290++7912" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "8C7D8BB6-5964-4E93-8874-ADC2DD34C654",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A1591B89191DB4E80F397B2CFB8C3FF9D708B9A3" : "WorkPlaning\/",
+    "a27b76cf-624d-f149-a35b-6a4634df3290++7912" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "WorkPlaning",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "WorkPlaning.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/enli2222\/WorkPlaning.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A1591B89191DB4E80F397B2CFB8C3FF9D708B9A3"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/techsrv.wind.com.cn:8080\/svn\/WL",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "a27b76cf-624d-f149-a35b-6a4634df3290++7912"
+    }
+  ]
+}

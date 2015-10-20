@@ -32,24 +32,38 @@ class SetupViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if 0 == indexPath.section {
-            if 0 == indexPath.row {
+            //let cell = tableView.cellForRowAtIndexPath(indexPath)
+            switch indexPath.row{
+            case 0:
                 let result = WorkListManager.sharedInstance.uploadCurrentWorkList()
                 if result.result {
                     showMessage("确认", Message: "搜索内容添加成功！")
                 }else{
                     showMessage("错误", Message: result.resultMsg)
                 }
-            } else {
+            case 1:
                 let result = WorkListManager.sharedInstance.downloadCurrentWorkList()
                 if result.result {
                     showMessage("确认", Message: "搜索内容删除成功！")
                 }else{
                     showMessage("错误", Message: result.resultMsg)
                 }
+            default:
+                return
+                
             }
-            
+        }else if 1 == indexPath.section {
+            self.performSegueWithIdentifier("pushListContent", sender: nil)
+
         }
         
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "pushListContent" {
+            let vc = segue.destinationViewController as! ListConTentViewController
+            vc.contentList = TF.printApp()
+        }
     }
 
     /*

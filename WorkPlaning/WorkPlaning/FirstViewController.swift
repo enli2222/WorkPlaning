@@ -95,13 +95,15 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: tmpIdentifier)
         }
         if indexPath.row < WorkListManager.sharedInstance.currentWorkList.count {
-           cell!.textLabel?.text = WorkListManager.sharedInstance.currentWorkList[indexPath.row]["work_title"]?.asString()
+            cell!.textLabel?.text = WorkListManager.sharedInstance.currentWorkList[indexPath.row]["work_title"]?.asString()
         }
         return cell!
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print(indexPath.row, terminator: "")
+        WorkListManager.sharedInstance.currentWorkID =
+            WorkListManager.sharedInstance.currentWorkList[indexPath.row]["work_id"]!.asInt()
+        self.navi!.pushViewController(self.editViewController!, animated: true)
     }
 }
 
