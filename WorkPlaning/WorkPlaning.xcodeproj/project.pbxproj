@@ -310,12 +310,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zhang guoxi (VQ2V26X83P)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zhang guoxi (VQ2V26X83P)";
 				INFOPLIST_FILE = WorkPlaning/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wind.enli.test;
 				PRODUCT_NAME = "计划";
-				PROVISIONING_PROFILE = "684e5b67-a38b-43b8-aa47-11b911b68892";
+				PROVISIONING_PROFILE = "ec4ad2e7-48bc-4223-a36a-3b3276ecf1ae";
 				SWIFT_OBJC_BRIDGING_HEADER = "WorkPlaning/Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "../**";
 			};

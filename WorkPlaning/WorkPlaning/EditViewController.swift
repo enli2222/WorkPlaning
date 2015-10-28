@@ -38,6 +38,12 @@ class EditViewController: UIViewController,UITextViewDelegate {
         workDetail.layer.borderWidth = 1.0
         workDetail.layer.borderColor = UIColor.grayColor().CGColor
         workDetail.layer.cornerRadius = 3
+
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         if WorkListManager.sharedInstance.currentWorkID == 0 {
             self.workDetail.text = ""
             self.workTitle.text = ""
@@ -46,7 +52,6 @@ class EditViewController: UIViewController,UITextViewDelegate {
             self.workTitle.text = tmp.title
             self.workDetail.text = tmp.content
         }
-        
     }
     
     override func viewDidAppear(animated: Bool) {

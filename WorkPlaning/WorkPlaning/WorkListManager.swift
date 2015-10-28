@@ -49,13 +49,13 @@ class WorkListManager {
         
     }
     
-    func getWork(workID: Int) -> (id:Int, title: String, content: String) {
+    func getWork(workID: Int) -> (id:Int, title: String, content: String, createDate: String) {
         let sql = "select * from tb_worklist where work_id = @id"
         let result = db.query(sql, parameters: [workID])
-        return ((result[0]["work_id"]?.asInt())!,(result[0]["work_title"]?.asString())!,(result[0]["work_content"]?.asString())!)
+        return ((result[0]["work_id"]?.asInt())!,(result[0]["work_title"]?.asString())!,(result[0]["work_content"]?.asString())!,(result[0]["work_create_date"]?.asString())!)
     }
     
-    func getCurrentWork() -> (id:Int, title: String, content: String) {
+    func getCurrentWork() -> (id:Int, title: String, content: String, createDate: String) {
         return getWork(currentWorkID)
     }
     

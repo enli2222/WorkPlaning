@@ -92,10 +92,11 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         let tmpIdentifier = "WorkListCell";
         var cell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(tmpIdentifier)
         if cell == nil {
-            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: tmpIdentifier)
+            cell = UITableViewCell(style: UITableViewCellStyle.Value1							, reuseIdentifier: tmpIdentifier)
         }
         if indexPath.row < WorkListManager.sharedInstance.currentWorkList.count {
             cell!.textLabel?.text = WorkListManager.sharedInstance.currentWorkList[indexPath.row]["work_title"]?.asString()
+            cell!.detailTextLabel?.text = WorkListManager.sharedInstance.currentWorkList[indexPath.row]["work_create_date"]?.asString()
         }
         return cell!
     }
