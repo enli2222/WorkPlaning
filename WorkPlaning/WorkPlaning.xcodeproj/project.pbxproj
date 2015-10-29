@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1648F8FB1BCCBC7D00F643C3 /* SQLiteDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1648F8F91BCCBC7D00F643C3 /* SQLiteDB.swift */; settings = {ASSET_TAGS = (); }; };
-		1648F8FC1BCCBC7D00F643C3 /* String-Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1648F8FA1BCCBC7D00F643C3 /* String-Extras.swift */; settings = {ASSET_TAGS = (); }; };
+		1648F8FB1BCCBC7D00F643C3 /* SQLiteDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1648F8F91BCCBC7D00F643C3 /* SQLiteDB.swift */; };
+		1648F8FC1BCCBC7D00F643C3 /* String-Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1648F8FA1BCCBC7D00F643C3 /* String-Extras.swift */; };
 		1648F8FF1BCE047600F643C3 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1648F8FE1BCE047600F643C3 /* libsqlite3.tbd */; };
 		1656ACA01B9EF7BF00523C61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1656AC9F1B9EF7BF00523C61 /* AppDelegate.swift */; };
 		1656ACA21B9EF7C000523C61 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1656ACA11B9EF7C000523C61 /* FirstViewController.swift */; };
@@ -19,9 +19,10 @@
 		16C61E631B9F0F1600D976C2 /* Secound.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16C61E621B9F0F1600D976C2 /* Secound.storyboard */; };
 		16C61E651B9F139800D976C2 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C61E641B9F139800D976C2 /* EditViewController.swift */; };
 		16C61E671BA0363000D976C2 /* WorkListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C61E661BA0363000D976C2 /* WorkListManager.swift */; };
-		16DFE2B61BD62C6A0040B9AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16DFE2B41BD62C6A0040B9AF /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
-		16DFE2B81BD631170040B9AF /* ListConTentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DFE2B71BD631170040B9AF /* ListConTentViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		16EE25041BB15E7E00261A40 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EE25031BB15E7E00261A40 /* SetupViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		16DFE2B61BD62C6A0040B9AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16DFE2B41BD62C6A0040B9AF /* Main.storyboard */; };
+		16DFE2B81BD631170040B9AF /* ListConTentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DFE2B71BD631170040B9AF /* ListConTentViewController.swift */; };
+		16EE25041BB15E7E00261A40 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EE25031BB15E7E00261A40 /* SetupViewController.swift */; };
+		8D8792BD1BE25D430086324A /* WorkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8792BC1BE25D430086324A /* WorkTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		16DFE2B51BD62C6A0040B9AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		16DFE2B71BD631170040B9AF /* ListConTentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConTentViewController.swift; sourceTree = "<group>"; };
 		16EE25031BB15E7E00261A40 /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
+		8D8792BC1BE25D430086324A /* WorkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				1656ACA31B9EF7C000523C61 /* SecondViewController.swift */,
 				16EE25031BB15E7E00261A40 /* SetupViewController.swift */,
 				16DFE2B41BD62C6A0040B9AF /* Main.storyboard */,
+				8D8792BC1BE25D430086324A /* WorkTableViewCell.swift */,
 				16C61E621B9F0F1600D976C2 /* Secound.storyboard */,
 				1656ACA81B9EF7C000523C61 /* Images.xcassets */,
 				1656ACAA1B9EF7C000523C61 /* LaunchScreen.xib */,
@@ -190,6 +193,7 @@
 			files = (
 				16C61E651B9F139800D976C2 /* EditViewController.swift in Sources */,
 				1648F8FB1BCCBC7D00F643C3 /* SQLiteDB.swift in Sources */,
+				8D8792BD1BE25D430086324A /* WorkTableViewCell.swift in Sources */,
 				16C61E671BA0363000D976C2 /* WorkListManager.swift in Sources */,
 				1656ACA41B9EF7C000523C61 /* SecondViewController.swift in Sources */,
 				1648F8FC1BCCBC7D00F643C3 /* String-Extras.swift in Sources */,
@@ -316,7 +320,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wind.enli.test;
 				PRODUCT_NAME = "计划";
-				PROVISIONING_PROFILE = "ec4ad2e7-48bc-4223-a36a-3b3276ecf1ae";
+				PROVISIONING_PROFILE = "78031087-7c39-459a-a094-8429c0e0693b";
 				SWIFT_OBJC_BRIDGING_HEADER = "WorkPlaning/Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "../**";
 			};

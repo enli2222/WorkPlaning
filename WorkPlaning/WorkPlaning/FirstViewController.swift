@@ -19,6 +19,7 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         
         workList.delegate = self
         workList.dataSource = self
+        workList.tableFooterView = UIView()
         navi = self.navigationController
         editViewController = self.storyboard?.instantiateViewControllerWithIdentifier("EditViewController") as? EditViewController
     }
@@ -90,13 +91,14 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let tmpIdentifier = "WorkListCell";
-        var cell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(tmpIdentifier)
-        if cell == nil {
-            cell = UITableViewCell(style: UITableViewCellStyle.Value1							, reuseIdentifier: tmpIdentifier)
-        }
+        let cell:WorkTableViewCell? = tableView.dequeueReusableCellWithIdentifier(tmpIdentifier) as? WorkTableViewCell
+//        if cell == nil {
+//            cell = WorkTableViewCell();
+////          cell = UITableViewCell(style: UITableViewCellStyle.Value1							, reuseIdentifier: tmpIdentifier)
+//        }
         if indexPath.row < WorkListManager.sharedInstance.currentWorkList.count {
-            cell!.textLabel?.text = WorkListManager.sharedInstance.currentWorkList[indexPath.row]["work_title"]?.asString()
-            cell!.detailTextLabel?.text = WorkListManager.sharedInstance.currentWorkList[indexPath.row]["work_create_date"]?.asString()
+            cell!.titleLabel.text = WorkListManager.sharedInstance.currentWorkList[indexPath.row]["work_title"]?.asString()
+            cell!.workDatetimeLabel.text = WorkListManager.sharedInstance.currentWorkList[indexPath.row]["work_create_date"]?.asString()
         }
         return cell!
     }
