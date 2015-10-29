@@ -12,7 +12,7 @@ class EditViewController: UIViewController,UITextViewDelegate {
     @IBOutlet weak var workTitle: UITextField!
     @IBOutlet weak var workDetail: UITextView!
     @IBAction func onSaveButtonClick(sender: AnyObject) {
-        guard let tmp = workTitle.text else {
+        guard let _ = workTitle.text else {
             return
         }
         

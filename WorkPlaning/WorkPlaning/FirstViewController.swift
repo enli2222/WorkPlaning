@@ -32,6 +32,7 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     @IBAction func onAddButtonClick(sender: AnyObject) {
         WorkListManager.sharedInstance.currentWorkID = 0
         self.navigationController?.pushViewController(editViewController!, animated: true)
+//        self.presentViewController(editViewController!, animated: true, completion: nil)
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
