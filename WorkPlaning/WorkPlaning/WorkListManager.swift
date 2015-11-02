@@ -22,11 +22,13 @@ class WorkDetail {
 
 class WorkListManager {
     var currentWorkID: Int
+    var currentTab: Int
     var currentWorkList: [SQLRow]
     var HistoryWorkList: [SQLRow]
     var db: SQLiteDB
     init(){
         currentWorkID = 0
+        currentTab = 0
         db = SQLiteDB.sharedInstance()
         currentWorkList = []
         HistoryWorkList = []

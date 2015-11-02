@@ -53,16 +53,33 @@ class SetupViewController: UITableViewController {
                 
             }
         }else if 1 == indexPath.section {
-            self.performSegueWithIdentifier("pushListContent", sender: nil)
-
+            self.performSegueWithIdentifier("pushListContent", sender: indexPath)
         }
         
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "pushListContent" {
-            let vc = segue.destinationViewController as! ListConTentViewController
-            vc.contentList = TF.printApp()
+            if let tmp = sender {
+                switch (tmp as! NSIndexPath).row {
+                case 0:
+                    let vc = segue.destinationViewController as! ListConTentViewController
+                    vc.contentList = TF.printApp()
+                case 1:
+                    let vc = segue.destinationViewController as! ListConTentViewController
+                    var tmp = "Tab: \(WorkListManager.sharedInstance.currentTab)"
+                    if #available(iOS 9.0, *) {
+                        for item in (UIApplication.sharedApplication().shortcutItems)! {
+                            print(item.localizedTitle)
+                            tmp = "\(tmp) \r\n \(item.localizedTitle)"
+                        }
+                    }
+                    vc.contentList = tmp
+                default:
+                    return;
+                }
+            }
+
         }
     }
 

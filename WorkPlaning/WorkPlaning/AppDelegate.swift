@@ -12,11 +12,27 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    @available(iOS 9.0, *)
+    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+        WorkListManager.sharedInstance.currentTab -= 1;
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         WorkListManager.sharedInstance.loadData()
+        
+        if #available(iOS 9.0, *) {
+            if let item = launchOptions?[UIApplicationLaunchOptionsShortcutItemKey] as? UIApplicationShortcutItem{            
+               //WorkListManager.sharedInstance.currentTab = item.userInfo?["workID"].asInt()
+                WorkListManager.sharedInstance.currentTab = 100;
+                return false  //true: 执行performActionForShortcutItem
+            }
+        } else {
+            // Fallback on earlier versions
+        }
         return true
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {

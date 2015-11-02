@@ -2,6 +2,40 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIApplicationShortcutItems</key>
+    <array>
+        <dict>
+            <key>UIApplicationShortcutItemIconFile</key>
+            <string>test</string>
+            <key>UIApplicationShortcutItemTitle</key>
+            <string>当前任务</string>
+            <key>UIApplicationShortcutItemSubtitle</key>
+            <string>可以查看当前任务</string>
+            <key>UIApplicationShortcutItemType</key>
+            <string>wind.enli.test.currentwork</string>
+            <key>UIApplicationShortcutItemUserInfo</key>
+            <dict>
+                <key>key1</key>
+                <string>value1</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>UIApplicationShortcutItemIconType</key>
+            <string>UIApplicationShortcutIconTypeCompose</string>
+            <key>UIApplicationShortcutItemTitle</key>
+            <string>历史任务</string>
+            <key>UIApplicationShortcutItemSubtitle</key>
+            <string>可以查看历史任务</string>
+            <key>UIApplicationShortcutItemType</key>
+            <string>wind.enli.test.historywork</string>
+            <key>UIApplicationShortcutItemUserInfo</key>
+            <dict>
+                <key>key2</key>
+                <string>value2</string>
+            </dict>
+        </dict>
+    </array>
+    
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

@@ -43,11 +43,34 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         return UITableViewCellEditingStyle.Delete
     }
     
+    //新增快捷键
+    func addShortcutItem(workTitle: String, workID: Int){
+        if #available(iOS 9.0, *) {
+            if let items = UIApplication.sharedApplication().shortcutItems {
+                let icon = UIApplicationShortcutIcon(type: .Share)
+                let item = UIApplicationShortcutItem(type: "work\(workID)", localizedTitle: workTitle, localizedSubtitle: "", icon: icon, userInfo: ["id":workID])
+                var updateItems = items
+                if updateItems.count > 0 {
+                    updateItems[0] = item
+                }else{
+                    updateItems.append(item)
+                }
+                //动态和静态shortcut一起用会造成不覆盖
+                UIApplication.sharedApplication().shortcutItems = updateItems
+                //UIApplication.sharedApplication().shortcutItems = items
+                workList.reloadData()
+            }
+        } else {
+            // Fallback on earlier versions
+        }
 
+        
+        
+    }
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         
-        var editButton = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "编辑", handler: {(sender,indexPath)->Void in
+        let editButton = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "编辑", handler: {(sender,indexPath)->Void in
                 WorkListManager.sharedInstance.currentWorkID =
                     WorkListManager.sharedInstance.currentWorkList[indexPath.row]["work_id"]!.asInt()
                 self.navi!.pushViewController(self.editViewController!, animated: true)
@@ -57,17 +80,28 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             WorkListManager.sharedInstance.completedWork(WorkListManager.sharedInstance.currentWorkList[indexPath.row]["work_id"]!.asInt())
             workList.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Right)
         }
-        var completedButton = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "完成",handler:onCompletedButtonClick)
+        let completedButton = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "完成",handler:onCompletedButtonClick)
         
         func onDeleteButtonClick(sender:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void{
         WorkListManager.sharedInstance.delete(WorkListManager.sharedInstance.currentWorkList[indexPath.row]["work_id"]!.asInt())
             workList.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
 
         }
+        
+        func onAddShortcutItem(sender: UITableViewRowAction!, indexPath: NSIndexPath! ) -> Void{
+            let title = WorkListManager.sharedInstance.currentWorkList[indexPath.row]["work_title"]!.asString()
+            let id = WorkListManager.sharedInstance.currentWorkList[indexPath.row]["work_id"]!.asInt()
+            self.addShortcutItem(title, workID: id)
+            
+        }
+        let addShortcutItemButton = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "菜单", handler: onAddShortcutItem)
+        addShortcutItemButton.backgroundColor = UIColor.greenColor()
+        
         //completedButton.backgroundColor = UIColor.grayColor()
         let deleteButton = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "删除", handler: onDeleteButtonClick)
         deleteButton.backgroundColor = UIColor.grayColor()
-        return [deleteButton,editButton,completedButton]
+        
+        return [deleteButton,editButton,addShortcutItemButton,completedButton]
     }
     
     
